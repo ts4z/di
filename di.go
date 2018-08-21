@@ -14,7 +14,7 @@ import (
 func EnsureAllFieldsSet(obj interface{}) error {
 	val := reflect.ValueOf(obj)
 	nf := val.NumField()
-	nv := []int{}
+	var nv []int
 	for i := 0; i < nf; i++ {
 		fv := val.Field(i)
 		if fv.IsNil() {
