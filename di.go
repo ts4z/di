@@ -17,7 +17,7 @@ func EnsureAllFieldsSet(obj interface{}) error {
 	nv := []int{}
 	for i := 0; i < nf; i++ {
 		fv := val.Field(i)
-		if /*fv.CanSet() &&*/ fv.IsNil() {
+		if fv.IsNil() {
 			nv = append(nv, i)
 		}
 	}
